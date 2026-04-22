@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: sqlserver-dev
+    environment:
+      ACCEPT_EULA: Y
+      MSSQL_SA_PASSWORD: "YourSecurePassword123!"
+      MSSQL_AGENT_ENABLED: "true"
+      MSSQL_PID: Developer
+    ports:
+      - "1433:1433"
+    volumes:
+      - sqlserver-data:/var/opt/mssql
+    networks:
+      sqlserver-net:
+        ipv4_address: 172.20.0.2
+    mem_limit: 4gb
+    restart: unless-stopped
+
+volumes:
+  sqlserver-data:
+
+networks:
+  sqlserver-net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16
