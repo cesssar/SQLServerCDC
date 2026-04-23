@@ -9,6 +9,7 @@ Os seguintes containers foram adicionados ao ambiente para apoiar o fluxo com SQ
 - `sqlserver`: container do Microsoft SQL Server, utilizado como banco de dados relacional principal com suporte a CDC.
 - `redis`: servidor de banco de dados em memória, usado para cache e processamento rápido de dados.
 - `dbgate`: ferramenta online para gerenciar SQL Server e Redis via interface web, podendo tambem ser usada para conectar e administrar outros bancos de dados.
+- Documentacao oficial do DbGate: https://docs.dbgate.io/
 
 ## Pré-requisitos
 - SQL Server com suporte a CDC habilitado (podendo utilizar em container Docker para testes)
