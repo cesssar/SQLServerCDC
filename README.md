@@ -1,10 +1,17 @@
-# Guia de Configuração do SQL Server CDC
+# Projeto SQL Server CDC
 
 ## Visão Geral
 Este guia demonstra como configurar Change Data Capture (CDC) no SQL Server e implementar um fluxo de trabalho completo de leitura de dados.
 
+## Containers do Projeto
+Os seguintes containers foram adicionados ao ambiente para apoiar o fluxo com SQL Server e Redis:
+
+- `sqlserver`: container do Microsoft SQL Server, utilizado como banco de dados relacional principal com suporte a CDC.
+- `redis`: servidor de banco de dados em memória, usado para cache e processamento rápido de dados.
+- `dbgate`: ferramenta online para gerenciar SQL Server e Redis via interface web, podendo tambem ser usada para conectar e administrar outros bancos de dados.
+
 ## Pré-requisitos
-- SQL Server com suporte a CDC habilitado
+- SQL Server com suporte a CDC habilitado (podendo utilizar em container Docker para testes)
 - Permissões apropriadas no banco de dados
 
 ---
